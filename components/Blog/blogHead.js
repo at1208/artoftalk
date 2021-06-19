@@ -7,11 +7,11 @@ const BlogHead = ({ blog }) => (
                 {blog.title} | {process.env.NEXT_PUBLIC_APP_NAME}
             </title>
             <meta name="description" content={blog.mdesc} />
-            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN}/${blog.slug}`} />
+            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/${blog.slug}`} />
             <meta property="og:title" content={`${blog.title}| ${process.env.NEXT_PUBLIC_APP_NAME}`} />
             <meta property="og:description" content={blog.mdesc} />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN}/${blog.slug}`} />
+            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/${blog.slug}`} />
             <meta property="og:site_name" content={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
             <meta property="og:image" content={blog.featureImg} />
             <meta property="og:image:secure_url" content={blog.featureImg} />
