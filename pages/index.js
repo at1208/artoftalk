@@ -112,8 +112,8 @@ const Home = ({ largeBlogs, smallBlogs, mediumBlogs }) => {
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}`} />
             <meta property="og:site_name" content={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
-            <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/artoftalk.svg`} />
-            <meta property="og:image:secure_url" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/artoftalk.svg`} />
+            <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/artoftalk.jpg`} />
+            <meta property="og:image:secure_url" content={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/artoftalk.jpg`} />
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${process.env.NEXT_PUBLIC_FB_APP_ID}`} />
             </Head>
@@ -244,44 +244,44 @@ const Home = ({ largeBlogs, smallBlogs, mediumBlogs }) => {
                        <div className="row col justify-content-center">
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/travlojournal.svg"
-
+                               alt="travlojournal"
                                onClick={() => window.location = "http://travlojournal.com"}
                                className={styles.logo} />
                          </div>
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/fashiofly.svg"
-
+                               alt="fashiofly"
                                onClick={() => window.location = "http://fashiofly.com"}
                                className={styles.logo} />
                          </div>
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/artoftalk.svg"
-
+                               alt="artoftalk"
                                onClick={() => window.location = "http://artoftalk.in"}
                                className={styles.logo} />
                          </div>
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/elitegamezone.svg"
-
+                               alt="elitegamezone"
                                onClick={() => window.location = "http://elitegamezone.com"}
                                className={styles.logo} />
                          </div>
 
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/vedifly.svg"
-
+                               alt="vedifly"
                                onClick={() => window.location = "http://vedifly.com"}
                                className={styles.logo} />
                          </div>
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                              <img src="/scientifly.svg"
-
+                               alt="scientifly"
                                onClick={() => window.location = "http://scientifly.com"}
                                className={styles.logo} />
                          </div>
                          <div className="col-md-5 col-sm-5 col-lg-5 col-6 p-2">
                             <img src="/geeksocean.svg"
-
+                              alt="geeksocean"
                               onClick={() => window.location = "http://geeksocean.com"}
                               className={styles.logo} />
                          </div>
