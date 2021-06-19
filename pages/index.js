@@ -14,7 +14,7 @@ import AuthorCardSkeleton from '../components/Blog/Cards/authorCardSkeleton'
 import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
 
 import Layout from '../components/Layout';
-import { one_tap_login, authenticate, isAuth} from '../actions/auth';
+// import { one_tap_login, authenticate, isAuth} from '../actions/auth';
 import { blog_list, author_list, trending_list } from '../actions/blog';
 import {random_categories } from '../actions/category';
 
@@ -23,7 +23,6 @@ import {random_categories } from '../actions/category';
 const Home = ({ largeBlogs, smallBlogs, mediumBlogs }) => {
   const [authors, setAuthors] = useState();
   const [trendingBlogs, setTrending] = useState();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [categories, setCategories] = useState();
 
 
@@ -72,34 +71,51 @@ const Home = ({ largeBlogs, smallBlogs, mediumBlogs }) => {
   }, [])
 
 
-  const handleOnetapResponse = (response) => {
-  // const decodedToken = jwt_decode(response.credential)
-    one_tap_login({ googleToken: response.credential, domain: process.env.NEXT_PUBLIC_DOMAIN_ID })
-      .then(result => {
-        authenticate(result, () => {
-          setIsAuthenticated(true)
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
+  // const handleOnetapResponse = (response) => {
+  // // const decodedToken = jwt_decode(response.credential)
+  //   one_tap_login({ googleToken: response.credential, domain: process.env.NEXT_PUBLIC_DOMAIN_ID })
+  //     .then(result => {
+  //       authenticate(result, () => {
+  //         setIsAuthenticated(true)
+  //       })
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }
 
-  useEffect(() => {
-    if(!isAuth()){
-      window.onload = function () {
-         google.accounts.id.initialize({
-           client_id:process.env.NEXT_PUBLIC_GOOGLE_CLIEND_ID,
-           callback: handleOnetapResponse
-         });
-         google.accounts.id.prompt();
-       }
-    }
-  }, [])
+  // useEffect(() => {
+  //   if(!isAuth()){
+  //     window.onload = function () {
+  //        google.accounts.id.initialize({
+  //          client_id:process.env.NEXT_PUBLIC_GOOGLE_CLIEND_ID,
+  //          callback: handleOnetapResponse
+  //        });
+  //        google.accounts.id.prompt();
+  //      }
+  //   }
+  // }, [])
 
   function HeaderSEO(){
      return <Head>
-               <title>Home</title>
+            <title>{process.env.NEXT_PUBLIC_APP_NAME}</title>
+            <meta
+                name="description"
+                content="The content is specific towards the Individual being rather than materialistic entities, How to be a good person, How to attain a good conversation skil, etc"
+            />
+            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN}`} />
+            <meta property="og:title" content={`The content is specific towards the Individual being rather than materialistic entities | ${process.env.NEXT_PUBLIC_APP_NAME}`} />
+            <meta
+                property="og:description"
+                content="The content is specific towards the Individual being rather than materialistic entities, How to be a good person, How to attain a good conversation skil, etc"
+            />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN}`} />
+            <meta property="og:site_name" content={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
+            <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/artoftalk.svg`} />
+            <meta property="og:image:secure_url" content={`${process.env.NEXT_PUBLIC_DOMAIN}/artoftalk.svg`} />
+            <meta property="og:image:type" content="image/jpg" />
+            <meta property="fb:app_id" content={`${process.env.NEXT_PUBLIC_FB_APP_ID}`} />
             </Head>
    }
 
@@ -162,7 +178,7 @@ const Home = ({ largeBlogs, smallBlogs, mediumBlogs }) => {
   }
   return <>
            <HeaderSEO  />
-           <Layout isAuthenticated={isAuthenticated}>
+           <Layout >
               <div className="div-container mb-5">
                  <div className="row col">
                     <div className="col-md-4 col-sm-5 col-lg-4">

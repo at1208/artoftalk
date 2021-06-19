@@ -29,6 +29,7 @@ const Card = ({ blog }) => {
                           <div className={styles.excerpt}>{renderHTML(blog.excerpt)}</div>
                         </div>
                      </div>
+                 
                      <small className={styles.time}>{moment(blog && blog.createdAt).format("MMM D")}  . {readingTime(blog.body || " ").text}</small>
                  </div>
                  <div className="col-md-4 col-sm-4 col-4">
