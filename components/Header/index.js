@@ -49,7 +49,7 @@ const Header = () => {
   return <div className={styles.outercontainer}>
              <Grid container justify="space-between">
                <Grid item>
-                  <img src="/artoftalk.svg" className={styles.logo}/>
+                  <img src="/artoftalk.svg" className={styles.logo} alt="artoftalk" />
                   <span className={styles.appname}>Art of Talk</span>
                </Grid>
                <Grid item>
