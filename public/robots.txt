@@ -4,7 +4,5 @@ Allow: /
 # Host
 Host:https://artoftalk.in
 
-Disallow: https://cms.readifly.com/api/*
-
 # Sitemaps
 Sitemap:https://artoftalk.in/server-sitemap.xml
