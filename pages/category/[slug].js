@@ -8,7 +8,7 @@ import { capitalize } from '../../utils/helpers';
 
 const Category = ({ data, router, category }) => {
 
-  if(data && category.length){
+  if(data && category && category.length){
    function BlogsByCategory(){
      return data.map((blog, i) => {
        return <BlogMediumCard
