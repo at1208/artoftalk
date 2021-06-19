@@ -18,7 +18,7 @@ const BlogHead = ({ blog }) => (
             <meta property="og:image:type" content="image/jpg"  alt='author'/>
             <meta property="fb:app_id" content={`${process.env.NEXT_PUBLIC_FB_APP_ID}`} />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@geeks_ocean" />
+            <meta name="twitter:site" content="" />
             <meta name="twitter:account_id" content="1244566301244190720" />
             <meta name="twitter:title" content={`${blog.title} | ${process.env.NEXT_PUBLIC_APP_NAME}`} />
             <meta name="twitter:description" content={blog.mdesc} />
