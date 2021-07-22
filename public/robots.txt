@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host:https://artoftalk.in
+Host:https://www.artoftalk.in
 
 # Sitemaps
-Sitemap:https://artoftalk.in/server-sitemap.xml
+Sitemap:https://www.artoftalk.in/server-sitemap.xml
