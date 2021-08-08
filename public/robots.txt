@@ -5,4 +5,4 @@ Allow: /
 Host:https://www.artoftalk.in
 
 # Sitemaps
-Sitemap:https://www.artoftalk.in/server-sitemap.xml
+Sitemap:https://www.artoftalk.in/sitemap.xml
