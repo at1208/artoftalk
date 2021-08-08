@@ -13,28 +13,28 @@ const Header = () => {
     }
   }, [isAuthenticated]);
 
-  const handleOnetapResponse = response => {
+  const handleOnetapResponse = (response) => {
     // const decodedToken = jwt_decode(response.credential)
     one_tap_login({
       googleToken: response.credential,
-      domain: process.env.NEXT_PUBLIC_DOMAIN_ID
+      domain: process.env.NEXT_PUBLIC_DOMAIN_ID,
     })
-      .then(result => {
+      .then((result) => {
         authenticate(result, () => {
           setIsAuthenticated(true);
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
   useEffect(() => {
     if (!isAuth()) {
-      window.onload = function() {
+      window.onload = function () {
         google.accounts.id.initialize({
           client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIEND_ID,
-          callback: handleOnetapResponse
+          callback: handleOnetapResponse,
         });
         google.accounts.id.prompt();
       };
@@ -45,8 +45,10 @@ const Header = () => {
     <div className={styles.outercontainer}>
       <Grid container justify="space-between">
         <Grid item>
-          <img src="/artoftalk.svg" className={styles.logo} alt="artoftalk" />
-          <span className={styles.appname}>Art of Talk</span>
+          <a href="/">
+            <img src="/artoftalk.svg" className={styles.logo} alt="artoftalk" />
+            <span className={styles.appname}>Art of Talk</span>
+          </a>
         </Grid>
         <Grid item></Grid>
       </Grid>
